@@ -3,6 +3,8 @@ package domain;
 import java.util.Objects;
 
 public class Car {
+    private final static int DEFAULT_INT = -1 ;
+
     private final long carId;
     private final String brand;
     private final String modelName;
@@ -17,6 +19,14 @@ public class Car {
         this.maxVelocity = maxVelocity;
         this.power = power;
         this.ownerId = ownerId;
+    }
+
+    public static Car proxy(long carId) {
+        return new Car(carId, null, null,  DEFAULT_INT, DEFAULT_INT, DEFAULT_INT);
+    }
+
+    public static Car proxyByPower(int power) {
+        return new Car(DEFAULT_INT, null, null,  DEFAULT_INT, power, DEFAULT_INT);
     }
 
     public long getCarId() {

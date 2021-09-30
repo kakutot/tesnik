@@ -15,6 +15,26 @@ public class Owner {
         this.age = age;
     }
 
+    public static Owner proxy(long ownerId) {
+        return new Owner(ownerId, null, null, -1);
+    }
+
+    public long getOwnerId() {
+        return ownerId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -31,4 +51,5 @@ public class Owner {
     public int hashCode() {
         return Objects.hash(ownerId);
     }
+
 }
