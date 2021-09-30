@@ -28,7 +28,7 @@ public class GarageImpl implements Garage {
           MIN - 0(1),
           AVG - 0(1 + LOAD_FACTOR),
           WORST CASE - O(N),
-        But key is always unique in our case (ownerId and brand) - no collisions, MIN complexity
+        But hashCode implementation is based on unique columns (ownerId and brand) - no collisions, MIN complexity
      */
 
     private final Map<Integer, Pair<Car, Boolean>> carTrack = new HashMap<>();
